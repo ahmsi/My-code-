@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تحدّي الميدان | لوحة الدول</title>
+<style>
+:root{--bg:#101820;--panel:#1b2730;--line:#3b4a50;--text:#f4f2e9;--muted:#b5c0bd;--gold:#e4c37a;--blue:#7ca8c9;--green:#8cae8b;--ochre:#c9a15b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:1px solid #596963;border-radius:8px;padding:8px 11px;background:#2b3a40;color:var(--text)}button:hover{filter:brightness(1.15)}button.primary{background:var(--gold);color:#20251f;border-color:var(--gold);font-weight:bold}button.danger{background:#583a37;border-color:#825751}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:#121d24;border-bottom:1px solid var(--line)}h1{font-size:clamp(20px,2vw,28px);margin:0}.sub{font-size:11px;color:var(--muted);margin-top:4px}.topstats{display:flex;gap:20px}.topstat{font-size:11px;color:var(--muted);text-align:center}.topstat b{display:block;color:var(--text);font-size:18px;margin-top:3px}.actions{display:flex;gap:6px;flex-wrap:wrap}.wrap{max-width:1700px;margin:auto;padding:12px}.grid{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(440px,1.8fr) minmax(245px,.9fr);gap:11px}.panel{background:#19262e;border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}.head{padding:11px 12px;border-bottom:1px solid var(--line);font-weight:bold;font-size:14px;display:flex;justify-content:space-between;gap:8px;align-items:center}.body{padding:11px}.map-panel{background:#17252c;position:relative}.map-area{padding:4px}.map-svg{width:100%;height:auto;display:block;max-height:calc(100vh - 175px);min-height:430px}.land{stroke:#d8d1b7;stroke-width:2.1;cursor:pointer;transition:filter .15s,stroke-width .15s}.land:hover{filter:brightness(1.15);stroke-width:4}.land.active{stroke:#fff3c2;stroke-width:4.5;filter:brightness(1.12)}.region-name{fill:#f7f0dc;font-size:13px;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#243139;stroke-width:3px;stroke-linejoin:round}.country-name{fill:#fff5d9;font-size:15px;font-weight:bold;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#29353a;stroke-width:4px}.gate{cursor:default}.gate circle{fill:#e9d6a0;stroke:#fff4d2;stroke-width:1.5}.gate text{font-size:11px;text-anchor:middle;fill:#273036;font-weight:bold}.legend{padding:10px;display:flex;justify-content:center;gap:13px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-left:4px}.nation{padding:11px;border-bottom:1px solid #34434a}.nation:last-child{border:0}.nation-title{display:flex;justify-content:space-between;align-items:center;font-weight:bold;gap:6px}.muted{font-size:11px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:9px 0}.stat{background:#111d23;border:1px solid #33434a;border-radius:7px;text-align:center;padding:7px 3px}.stat b{display:block;font-size:20px}.stat span{font-size:10px;color:var(--muted)}.meter{height:5px;background:#35444a;border-radius:6px;margin:7px 0}.meter i{height:100%;display:block;border-radius:6px}.pill{font-size:10px;border:1px solid #64736e;padding:3px 7px;border-radius:20px;color:var(--muted)}.box{border:1px solid #48584f;background:#202f32;border-radius:8px;padding:10px}.kv{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #3a484b;font-size:12px}.kv:last-child{border:0}.field{margin-top:9px}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.field input,.field select{width:100%;padding:8px;background:#101c22;color:var(--text);border:1px solid #455851;border-radius:7px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.controls button{font-size:12px}.events{display:flex;flex-direction:column;gap:6px;max-height:220px;overflow:auto}.event{font-size:11px;line-height:1.6;padding:8px;background:#111d23;border:1px solid #33434a;border-radius:7px}.event time{display:block;color:var(--muted);font-size:10px}.alliance{font-size:11px;padding:7px 0;border-bottom:1px solid #35434a}.alliance:last-child{border:0}.admin-note{font-size:12px;line-height:1.7;background:#2b2b23;border-right:3px solid var(--gold);padding:9px 11px;margin-bottom:10px;border-radius:6px}.screen .admin{display:none!important}.screen .grid{grid-template-columns:minmax(200px,.8fr) minmax(500px,2fr) minmax(240px,.9fr)}.screen .map-svg{max-height:calc(100vh - 140px)}.screen .wrap{max-width:none;padding:7px}.foot{text-align:center;color:#91a19d;font-size:10px;padding:12px}
+@media(max-width:1100px){.grid{grid-template-columns:1fr 1.5fr}.map-panel{grid-column:1/-1;grid-row:2}.screen .grid{grid-template-columns:1fr 1.5fr}.map-svg{max-height:none}}
+@media(max-width:720px){.top{align-items:flex-start;flex-direction:column}.topstats{width:100%;justify-content:space-around}.grid,.screen .grid{display:flex;flex-direction:column}.map-panel{order:-1}.map-svg{min-height:300px;max-height:none}.actions button{flex:1}}
+</style></head>
+<body>
+<header class="top">
+ <div><h1>تحدّي الميدان</h1><div class="sub">خريطة طبيعية • ثلاث دول • إدارة بسيطة للجنود</div></div>
+ <div class="topstats"><div class="topstat">الجولة<b id="round">١</b></div><div class="topstat">الوقت<b id="timer">60:00</b></div><div class="topstat">الدول<b>٣</b></div></div>
+ <div class="actions admin"><button id="screen" class="primary">شاشة الجمهور</button><button id="next">الجولة التالية</button><button id="reset" class="danger">إعادة ضبط</button></div>
+</header>
+<main class="wrap">
+ <div class="admin admin-note">اختر الدولة بعد القرعة. أنت تتحكم بتوزيع الجنود يدويًا حسب قوانينكم. الأرقام والأقاليم هنا تجريبية وقابلة للتغيير؛ الموقع لا يفرض توزيعًا تلقائيًا ولا يحسم الهجمات بدلًا عنكم.</div>
+ <div class="grid">
+  <aside class="panel">
+   <div class="head">سجل الأحداث <span class="pill" id="eventCount">٠</span></div><div class="body"><div class="events" id="events"></div></div>
+   <div class="head">التحالفات</div><div class="body" id="alliances"><div class="muted">لا توجد تحالفات مسجلة.</div></div>
+   <div class="head">البينية القادمة</div><div class="body"><div class="box"><b id="challengeTitle">تحدّي السرعة</b><div class="muted" style="margin-top:5px">مكافأة الفائز تحددها أنت.</div><div class="field admin"><label>اسم البينية</label><input id="challengeName" value="تحدّي السرعة"></div><div class="field admin"><label>مكافأة الجنود</label><input id="reward" type="number" value="5" min="0"></div><div class="field admin"><label>الفائز</label><select id="winner"></select></div><button class="primary admin" id="award" style="width:100%;margin-top:8px">إضافة الجنود للفائز</button></div></div>
+  </aside>
+  <section class="panel map-panel">
+   <div class="head"><span>خريطة الأقاليم والمداخل</span><span class="pill">اضغط على إقليم</span></div>
+   <div class="map-area"><svg class="map-svg" viewBox="0 0 760 630" aria-label="خريطة خيالية طبيعية بثلاث دول">
+    <defs>
+     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#243c42"/><stop offset="1" stop-color="#132a32"/></linearGradient>
+     <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7f8d70"/><stop offset="1" stop-color="#4e6657"/></linearGradient>
+     <pattern id="terrain" width="44" height="37" patternUnits="userSpaceOnUse"><path d="M5 28l7-12 7 12M27 9l4-6 5 6" fill="none" stroke="#e4d8ae" stroke-opacity=".12" stroke-width="1.3"/><path d="M20 33q8-7 16 0" fill="none" stroke="#e4d8ae" stroke-opacity=".08"/></pattern>
+    </defs>
+    <rect width="760" height="630" fill="url(#sea)"/>
+    <g opacity=".14" fill="none" stroke="#9ab9b4"><path d="M0 70q80 25 155 0t155 0t155 0t155 0t140 0"/><path d="M0 110q80 25 155 0t155 0t155 0t155 0t140 0"/><path d="M0 550q80 25 155 0t155 0t155 0t155 0t140 0"/></g>
+    <!-- irregular continent silhouette, gently curved coast -->
+    <path d="M235 45 Q285 24 333 50 L382 39 Q419 55 436 88 Q472 98 489 133 L535 150 Q565 136 592 163 L641 181 Q672 214 653 251 L681 283 Q696 322 665 352 L653 402 Q630 429 603 443 L584 488 Q554 515 527 507 L493 548 Q458 565 421 548 L379 575 Q344 580 317 554 L274 568 Q235 554 220 527 L174 512 Q147 487 159 456 L125 426 Q108 392 131 365 L111 326 Q102 288 130 260 L127 221 Q146 190 171 177 L174 132 Q192 103 215 96Z" fill="url(#land)" stroke="#d1c8a5" stroke-width="3"/>
+    <path d="M235 45 Q285 24 333 50 L382 39 Q419 55 436 88 Q472 98 489 133 L535 150 Q565 136 592 163 L641 181 Q672 214 653 251 L681 283 Q696 322 665 352 L653 402 Q630 429 603 443 L584 488 Q554 515 527 507 L493 548 Q458 565 421 548 L379 575 Q344 580 317 554 L274 568 Q235 554 220 527 L174 512 Q147 487 159 456 L125 426 Q108 392 131 365 L111 326 Q102 288 130 260 L127 221 Q146 190 171 177 L174 132 Q192 103 215 96Z" fill="url(#terrain)"/>
+    <!-- country regions, organic shapes -->
+    <path class="land active" data-id="north" d="M235 45 Q285 24 333 50 L382 39 Q419 55 436 88 L405 143 L348 166 L290 149 L237 177 L174 132 Q192 103 215 96Z" fill="#668eaf"/>
+    <path class="land" data-id="west" d="M174 132 L237 177 L290 149 L316 220 L284 278 L225 304 L169 286 L130 260 L127 221 L146 190 L171 177Z" fill="#6d96b4"/>
+    <path class="land" data-id="capital" d="M290 149 L348 166 L405 143 L440 197 L405 244 L354 266 L316 220Z" fill="#7ba2bf"/>
+    <path class="land" data-id="pass" d="M405 143 L436 88 Q472 98 489 133 L535 150 L531 203 L480 228 L440 197Z" fill="#668eaf"/>
+    <path class="land" data-id="forest" d="M535 150 L565 136 Q592 153 641 181 Q672 214 653 251 L599 265 L548 239 L531 203Z" fill="#718f69"/>
+    <path class="land" data-id="lake" d="M531 203 L548 239 L599 265 L653 251 L681 283 Q696 322 665 352 L609 350 L567 319 L548 276 L480 278 L480 228Z" fill="#7f9b72"/>
+    <path class="land" data-id="valley" d="M440 197 L480 228 L480 278 L548 276 L567 319 L532 375 L475 388 L431 353 L405 294 L405 244Z" fill="#718f69"/>
+    <path class="land" data-id="dunes" d="M169 286 L225 304 L284 278 L316 326 L290 378 L237 401 L182 385 L131 365 L111 326 L130 260Z" fill="#b99a5c"/>
+    <path class="land" data-id="oasis" d="M182 385 L237 401 L290 378 L333 420 L317 478 L274 505 L220 527 L174 512 L159 456 L125 426 L131 365Z" fill="#c6a66a"/>
+    <path class="land" data-id="south" d="M316 326 L354 266 L405 244 L405 294 L431 353 L475 388 L493 440 L456 482 L421 548 L379 575 Q344 580 317 554 L274 568 L274 505 L317 478 L333 420 L290 378Z" fill="#c4a15d"/>
+    <!-- gentle terrain details -->
+    <g fill="none" stroke="#f1e3bc" stroke-opacity=".24" stroke-width="1.3"><path d="M240 85q20-25 40 0t40 0"/><path d="M196 222q22-18 44 0t44 0"/><path d="M344 204q18-18 36 0t36 0"/><path d="M560 190q16-15 32 0t32 0"/><path d="M585 310q17-14 34 0t34 0"/><path d="M203 444q20-16 40 0t40 0"/><path d="M348 505q18-15 36 0t36 0"/></g>
+    <g class="region-name"><text x="302" y="93">الجبال الشمالية</text><text x="204" y="236">السهول الغربية</text><text x="356" y="214">العاصمة</text><text x="463" y="164">الممر الجبلي</text><text x="593" y="210">الغابات الشرقية</text><text x="617" y="310">بحيرة السهل</text><text x="480" y="333">الوادي الأخضر</text><text x="215" y="338">الصحراء الغربية</text><text x="221" y="465">الواحات</text><text x="390" y="470">السهول الجنوبية</text></g>
+    <g class="country-name"><text x="307" y="130">دولة الصقور</text><text x="584" y="255">دولة الحصن</text><text x="277" y="427">دولة التجارة</text></g>
+    <!-- entrance markers, deliberately small and clear -->
+    <g class="gate" transform="translate(365 42)"><circle r="13"/><text y="4">١</text></g>
+    <g class="gate" transform="translate(119 302)"><circle r="13"/><text y="4">٢</text></g>
+    <g class="gate" transform="translate(660 290)"><circle r="13"/><text y="4">١</text></g>
+    <g class="gate" transform="translate(418 550)"><circle r="13"/><text y="4">١</text></g>
+    <g class="gate" transform="translate(160 450)"><circle r="13"/><text y="4">٢</text></g>
+    <g transform="translate(706 47)"><path d="M0 -17L6 0L0 17L-6 0Z" fill="#e4c37a"/><text x="0" y="31" fill="#d6d4c2" font-size="10" text-anchor="middle">شمال</text></g>
+    <text x="20" y="610" fill="#afc0b7" font-size="10">خريطة تخيلية — الأقاليم والمداخل للتجربة</text>
+   </svg></div>
+   <div class="legend"><span><i class="dot" style="background:#7ba2bf"></i>دولة الجنود</span><span><i class="dot" style="background:#7f9b72"></i>دولة الدفاع</span><span><i class="dot" style="background:#c6a66a"></i>دولة الموارد</span><span>◉ مدخل</span></div>
+  </section>
+  <aside class="panel">
+   <div class="head">الدول وميزاتها</div><div id="nationCards"></div>
+   <div class="head">الإقليم المحدد <span id="regionBadge" class="pill">الجبال الشمالية</span></div>
+   <div class="body"><div class="box">
+    <b id="regionTitle">الجبال الشمالية</b>
+    <div class="kv"><span>الدولة المالكة</span><b id="regionOwner">دولة الجنود</b></div>
+    <div class="kv"><span>الجنود المخصصون هنا</span><b id="regionTroops">٠</b></div>
+    <div class="field admin"><label>الدولة المالكة</label><select id="owner"></select></div>
+    <div class="field admin"><label>عدد الجنود الذي تحدده أنت</label><input id="troops" type="number" min="0" value="0"></div>
+    <div class="controls admin"><button class="primary" id="save">حفظ التوزيع</button><button id="plus">+١ جندي</button><button id="minus">−١ جندي</button><button id="log">تسجيل حدث</button></div>
+   </div>
+   <div class="field admin"><label>إضافة جنود للدولة (من اختيارك)</label><select id="addCountry"></select><input id="addAmount" type="number" min="0" value="5" style="margin-top:6px"><button id="addToCountry" class="primary" style="width:100%;margin-top:6px">إضافة الجنود</button></div>
+   <div class="field admin"><label>توزيع بالقرعة — اختيار عشوائي للدولة فقط</label><button id="draw" style="width:100%">اسحب دولة عشوائيًا</button><div id="drawResult" class="muted" style="margin-top:6px"></div></div>
+  </div>
+  </aside>
+ </div>
+ <div class="foot">نسخة أولية محلية • الأسماء والحدود والأرقام تجريبية • التوزيع والقرعة تحت تحكم المشرف</div>
+</main>
+<script>
+const countries=[
+{id:'troops',name:'دولة الجنود',color:'#7ba2bf',icon:'⚑',strength:'قوة في عدد الجنود',weak:'مداخل أكثر؛ يصعب حمايتها',entrances:2,soldiers:0,points:0,resources:0},
+{id:'defense',name:'دولة الدفاع',color:'#7f9b72',icon:'⬟',strength:'حصن ودفاع أقوى',weak:'توسعها أبطأ ومواردها أقل',entrances:1,soldiers:0,points:0,resources:0},
+{id:'resources',name:'دولة الموارد',color:'#c6a66a',icon:'✦',strength:'تكسب موارد ومكافآت أكثر',weak:'دفاعها الأساسي أضعف',entrances:2,soldiers:0,points:0,resources:0}];
+const regions=[
+{id:'north',name:'الجبال الشمالية',owner:'troops',troops:0},{id:'west',name:'السهول الغربية',owner:'troops',troops:0},{id:'capital',name:'العاصمة',owner:'troops',troops:0},{id:'pass',name:'الممر الجبلي',owner:'troops',troops:0},
+{id:'forest',name:'الغابات الشرقية',owner:'defense',troops:0},{id:'lake',name:'بحيرة السهل',owner:'defense',troops:0},{id:'valley',name:'الوادي الأخضر',owner:'defense',troops:0},
+{id:'dunes',name:'الصحراء الغربية',owner:'resources',troops:0},{id:'oasis',name:'الواحات',owner:'resources',troops:0},{id:'south',name:'السهول الجنوبية',owner:'resources',troops:0}];
+const $=id=>document.getElementById(id),byId=id=>countries.find(c=>c.id===id),fmt=n=>Number(n).toLocaleString('ar-SA');let selected='north',round=1,events=[],alliances=[],seconds=3600;
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function addEvent(title,detail){events.unshift({title,detail,time:new Date().toLocaleTimeString('ar-SA',{hour:'2-digit',minute:'2-digit'}),round});renderEvents();}
+function renderEvents(){$('events').innerHTML=events.length?events.slice(0,12).map(e=>`<div class="event"><time>الجولة ${fmt(e.round)} • ${e.time}</time><b>${esc(e.title)}</b><br>${esc(e.detail)}</div>`).join(''):'<div class="muted">لا توجد أحداث بعد.</div>';$('eventCount').textContent=fmt(events.length);}
+function renderCountries(){$('nationCards').innerHTML=countries.map(c=>{let total=regions.filter(r=>r.owner===c.id).reduce((s,r)=>s+r.troops,0);return `<div class="nation"><div class="nation-title"><span style="color:${c.color}">${c.icon} ${c.name}</span><span class="pill">${c.entrances} مداخل</span></div><div class="stats"><div class="stat"><b>${fmt(total)}</b><span>الجنود على الخريطة</span></div><div class="stat"><b>${fmt(c.points)}</b><span>النقاط</span></div><div class="stat"><b>${fmt(c.resources)}</b><span>الموارد</span></div></div><div class="muted"><b>الميزة:</b> ${c.strength}</div><div class="muted" style="margin-top:4px"><b>العيب:</b> ${c.weak}</div></div>`}).join('');}
+function renderRegion(){let r=regions.find(x=>x.id===selected),c=byId(r.owner);$('regionBadge').textContent=r.name;$('regionTitle').textContent=r.name;$('regionOwner').textContent=c.name;$('regionTroops').textContent=fmt(r.troops);$('owner').value=r.owner;$('troops').value=r.troops;document.querySelectorAll('.land').forEach(p=>p.classList.toggle('active',p.dataset.id===selected));}
+function render(){renderCountries();renderRegion();renderEvents();$('round').textContent=fmt(round);$('alliances').innerHTML=alliances.length?alliances.map(a=>`<div class="alliance">${byId(a[0]).name} + ${byId(a[1]).name}</div>`).join(''):'<div class="muted">لا توجد تحالفات مسجلة.</div>';}
+function fill(){let opts=countries.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');['owner','addCountry','winner'].forEach(id=>$(id).innerHTML=opts);}
+document.querySelectorAll('.land').forEach(p=>p.addEventListener('click',()=>{selected=p.dataset.id;renderRegion();}));
+$('save').onclick=()=>{let r=regions.find(x=>x.id===selected),old=r.owner,newOwner=$('owner').value,amount=Math.max(0,Number($('troops').value)||0);r.owner=newOwner;r.troops=amount;addEvent('تحديث الإقليم',`${r.name}: ${byId(old).name} → ${byId(newOwner).name}، التوزيع ${amount} جندي.`);render();};
+$('plus').onclick=()=>{let r=regions.find(x=>x.id===selected);r.troops++;addEvent('إضافة جندي',`أضيف جندي إلى ${r.name} ضمن ${byId(r.owner).name}.`);render();};
+$('minus').onclick=()=>{let r=regions.find(x=>x.id===selected);if(r.troops<=0)return;r.troops--;addEvent('خصم جندي',`خُصم جندي من ${r.name}.`);render();};
+$('log').onclick=()=>{let r=regions.find(x=>x.id===selected);addEvent('تفقد إقليم',`${r.name} — ${byId(r.owner).name} — ${r.troops} جندي.`);};
+$('addToCountry').onclick=()=>{let c=byId($('addCountry').value),n=Math.max(0,Math.floor(Number($('addAmount').value)||0));c.resources+=0;addEvent('تسجيل تعزيز',`تم اعتماد ${n} جندي لـ${c.name}. وزّعهم يدويًا على أقاليمها من الخريطة.`);alert(`اعتمدت ${n} جندي لـ${c.name}. اختر إقليمًا تابعًا لها ثم اكتب العدد الجديد في خانة توزيع الجنود.`);};
+$('draw').onclick=()=>{let c=countries[Math.floor(Math.random()*countries.length)];$('drawResult').textContent='نتيجة القرعة: '+c.name;addEvent('قرعة الدول',`اختيار عشوائي: ${c.name}.`);};
+$('next').onclick=()=>{round++;addEvent('بداية جولة',`بدأت الجولة ${round}.`);render();};
+$('screen').onclick=()=>{document.body.classList.toggle('screen');$('screen').textContent=document.body.classList.contains('screen')?'العودة للمشرف':'شاشة الجمهور';};
+$('reset').onclick=()=>{if(confirm('إعادة ضبط الخريطة؟ سيتم حذف الأحداث وإرجاع الجنود للصفر.'))location.reload();};
+$('challengeName').addEventListener('input',()=>$('challengeTitle').textContent=$('challengeName').value||'البينية');
+$('award').onclick=()=>{let c=byId($('winner').value),n=Math.max(0,Math.floor(Number($('reward').value)||0));addEvent('مكافأة البينية',`فاز ${c.name} بالبينية "${$('challengeName').value}" وحصل على ${n} جندي. أضفهم يدويًا إلى الأقاليم.`);};
+function tick(){if(seconds<=0)return;seconds--;let m=Math.floor(seconds/60),s=seconds%60;$('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
+fill();render();setInterval(tick,1000);
+</script></b
